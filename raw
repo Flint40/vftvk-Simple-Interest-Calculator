@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <style>
+     body {
+     background-color:black;
+     font-family:arial;
+     color: white;
+}
+h1 {
+     color: grey;
+     font-family: verdana;
+}
+   .maindiv {
+      background-color: white;
+      width: 400px;
+      padding: 20px;
+      border-radius: 25px;
+      align: center;
+      color: black;
+}
+      
+  </style>
+       <title>Simple Interest Calculator</title>
+     </head>
+     <body>
+        <div class="maindiv">
+        <h1>Simple Interest Calculator</h1>
+        <div class="space">
+        Amount <input type="number"  id="principal" min="0"><br/>
+        Interest Rate <input type="range" id="rate" min="0" max="20"         value="10.25" step="0.25" ><span id="rate_val">10.25%</span><br/>
+        No. of Years <select id="years">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>           
+    </select><br/>  
+        <button onclick="compute()">Compute Interest</button><br/>
+        <span id="result"></span><br/>
+        <span id="result1"></span><br/>
+        <span id="result2"></span><br/>
+        <span id="result3"></span><br/>
+        </div>
+  <footer class="f"> &#169; This Calc Belongs to L Davis</footer>
+    </div>
+   </body>
+   <script>
+   var slider = document.getElementById("rate");
+   var output = document.getElementById("rate_val");
+   output.innerHTML = slider.value;
+   slider.oninput = function() {
+   output.innerHTML = this.value;
+}
+function compute(){
+  var p,t,r,si,y ;
+  p = document.getElementById("principal").value;
+  t = document.getElementById("years").value;
+  r = document.getElementById("rate").value;
+  si = parseInt((p*t*r)/100 );
+  y = new Date().getFullYear()+parseInt(t) 
+
+document.getElementById ('result').innerHTML ="If you deposit: "+p ;
+document.getElementById ('result1').innerHTML ="At a rate of: "+r ;
+document.getElementById ('result2').innerHTML ="you will receive "+si ;
+document.getElementById ('result3').innerHTML ="in the year of " +y ;
+}
+</script>   
+
+</html>
