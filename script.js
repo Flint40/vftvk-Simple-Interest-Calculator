@@ -1,4 +1,4 @@
-
+function slider() {
    var slider = document.getElementById("rate");
    var output = document.getElementById("rate_val");
    output.innerHTML = slider.value;
